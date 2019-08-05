@@ -36,6 +36,8 @@ while path == nil or string.len(path) == 0 do
     path = read()
 end
 
+path = string.gsub(path, "\\", "/")
+
 if name == nil or string.len(name) == 0 then 
     print("Please specify a name for the programm (default: startup)")
     write("> ")
