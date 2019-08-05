@@ -3,7 +3,7 @@ local settings_file = shell.resolve(".gd.cfg")
 
 local function getRepo()
     if fs.exists(settings_file) then 
-        local h = fs.open(settings_file, r)
+        local h = fs.open(settings_file, 'r')
         local s = h.readAll()
         h.close()
         return s
@@ -12,7 +12,7 @@ local function getRepo()
         print("Please specify the base url for all raw files:")
         write("> ")
         local r = read()
-        local h = fs.open(settings_file, w)
+        local h = fs.open(settings_file, 'w')
         h.write(r)
         h.close()
         return r
@@ -48,29 +48,15 @@ name = string.gsub(name, ".lua", " ")
 local file_name = shell.resolve(name)
 
 if fs.exists(file_name) then
-    print("Programm " .. name .. " already exists. Override? (J/N)")
-    local result = false
-    local loop = true
-    while true do
-        local key = os.pullEvent("key")
-        if key == keys.j then
-            result = true
-            loop = false
-        elseif key == keys.n then
-            result = false
-            loop = false
-        elseif key == keys.enter then
-            result = true
-            loop = false
-        end
-     end
-     if not result then
+    print("Programm " .. name .. " already exists. Override? (Y/N)")
+    local y = read()
+    if not (y == "y" or y = "Y" or y == "") then
         exit()
-     end
+    end
 end
 
 print("Downloading " .. path .. "...")
-http.request(repo .. '/' .. path)
+http.request(repo .. path)
 local loop = true
 while loop do
     local event, url, h = os.pullEvent()
