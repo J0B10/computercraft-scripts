@@ -50,7 +50,7 @@ local file_name = shell.resolve(name)
 if fs.exists(file_name) then
     print("Programm " .. name .. " already exists. Override? (Y/N)")
     local y = read()
-    if not (y == "y" or y = "Y" or y == "") then
+    if not (y == "y" or y == "Y" or y == "") then
         exit()
     end
 end
