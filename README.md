@@ -9,6 +9,10 @@ You can get gd from pastebin by using:
 pastebin get 1Bg5bypM gd
 ```
 
-To download a file just use this repos raw base url (`https://raw.githubusercontent.com/joblo2213/computercraft-scripts/master/`) and use the relative path to the file you want to download.
+To download a file just use this repos raw base url 
+```
+https://raw.githubusercontent.com/joblo2213/computercraft-scripts/master/
+```
+and use the relative path to the file you want to download.
 
 Have fun!
