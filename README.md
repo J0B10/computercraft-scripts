@@ -1,5 +1,5 @@
 # computercraft-scripts
-Repository containing various computercraft scripts I created.
+Repository containing various [computercraft](http://www.computercraft.info/) scripts I created.
 
 ### Downloading programs from this repo 
 The easiest way to download scripts from this repo is to use [`gd`](GitDownload.lua).
