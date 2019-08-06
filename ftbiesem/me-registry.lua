@@ -54,6 +54,7 @@ while true do
         elseif key == keys.enter then
             local tabID = shell.openTab("edit", registry[selected].file)
             multishell.setTitle(tabID, registry[selected].name)
+            term.setBackgroundColor(colors.black)
             multishell.setFocus(tabID)
         else
             loop = true
