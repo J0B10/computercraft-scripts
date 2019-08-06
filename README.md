@@ -4,7 +4,7 @@ Repository containing various [computercraft](http://www.computercraft.info/) sc
 ### Downloading programs from this repo 
 The easiest way to download scripts from this repo is to use [`gd`](GitDownload.lua).
 
-You can get gd from pastebin by using: 
+You can get gd from [pastebin](https://pastebin.com/1Bg5bypM) by using: 
 ```shell
 pastebin get 1Bg5bypM gd
 ```
