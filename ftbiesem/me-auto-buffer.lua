@@ -17,7 +17,7 @@ local function updateBuffer()
                 id = value.id,
                 dmg = value.dmg,
                 display_name = value.display_name,
-                amount = 2 ^ value.qty
+                amount = 2 ^ value.qty,
                 missing = true,
                 requested = false,
                 present = 0
