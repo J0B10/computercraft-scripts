@@ -7,7 +7,7 @@ local buffer = {}
 
 --update buffer to match chest content
 local function updateBuffer()
-    local content = inv.getAllStacks(true)
+    local content = inv.getAllStacks(false)
     local buffer_entry
     for i,value in ipairs(content) do
         if value ~= nil then
@@ -56,5 +56,6 @@ local function scroll()
     end
 end
 
+updateBuffer()
 display()
 scroll()
