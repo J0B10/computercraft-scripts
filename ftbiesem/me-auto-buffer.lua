@@ -22,7 +22,7 @@ local function updateBuffer()
     end
 end
 
-local scroll = 1
+local scroll_index = 1
 local size_x, size_Y = term.getSize()
 
 --display list on term
@@ -30,7 +30,7 @@ local function display()
     term.setBackgroundColor(colors.black)
     term.clear()
     for i=1, size_Y do
-        local value = buffer[scroll + i - 1]
+        local value = buffer[scroll_index + i - 1]
         if value ~= nil then 
             term.setCursorPos(1,i)
             term.write("(" .. "0" .. "/" .. value.amount .. ") " .. value.display_name)
@@ -43,13 +43,13 @@ local function scroll()
     while true do
         local event, scrollDirection, x, y = os.pullEvent("mouse_scroll")
         if scrollDirection == -1 then --scroll up
-            if scroll > 1 then 
-                scroll = scroll - 1
+            if scroll_index > 1 then 
+                scroll_index = scroll_index - 1
                 display()
             end
         elseif scrollDirection == 1 then --scroll down
-            if scroll + size_Y - 1 < #buffer then
-                scroll = scroll + 1
+            if scroll_index + size_Y - 1 < #buffer then
+                scroll_index = scroll_index + 1
                 display()
             end
         end
