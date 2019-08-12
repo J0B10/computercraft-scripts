@@ -46,6 +46,7 @@ end
 
 --waits for a long tine and then shuts down the portal
 local function idle()
+    sleep(sleep_time)
     while portal_charging do 
         sleep(10)
     end
