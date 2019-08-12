@@ -12,6 +12,7 @@ local redstone_colors = {
 local sleep_time = 10 * 60
 
 local portal_active = false
+local portal_charging = false
 
 --get the first slot that contains items. -1 if inventory is empty
 local function findItems()
@@ -36,13 +37,18 @@ local function transform()
         sleep(0.5)
         redstone.setBundledOutput(redstone_side, redstone_colors.piston)
         portal_active = true
+        portal_charging = true
+        sleep(7)
+        portal_charging = false
     end
     turtle.drop()
 end
 
 --waits for a long tine and then shuts down the portal
 local function idle()
-    sleep(sleep_time)
+    while portal_charging do 
+        sleep(10)
+    end
     redstone.setBundledOutput(redstone_side, 0)
     portal_active = false
     sleep(0.2)
