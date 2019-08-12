@@ -2,6 +2,9 @@
 local inv = peripheral.wrap("top")
 local me = peripheral.wrap("bottom")
 
+-- cpus that should be used
+local cpus = {}
+
 --stuff that should be buffered
 local buffer = {}
 
@@ -41,6 +44,28 @@ local function checkContents()
             else
                 buffer[i].missing = false
             end
+        end
+    end
+end
+
+--find a free cpu for crafting
+local function freeCPU() 
+    local all_cpus =table.sort(me.getCraftingCPUs(), function(a,b) return a.storage < b.storage end)
+    for i=1, #all_cpus do
+        if not all_cpus[i].busy then
+            for j=1, #cpus do
+                if all_cpus[i].name == cpus[j] then
+                    return cpus[j]
+                end
+            end 
+        end
+    end
+    return nil
+end
+
+local function requestMissing()
+    for i=1, #buffer do
+        if buffer[i].missing and (not buffer[i].requested) then
         end
     end
 end
