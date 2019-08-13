@@ -36,11 +36,11 @@ local function transform()
         redstone.setBundledOutput(redstone_side, redstone_colors.piston)
         sleep(0.1)
         redstone.setBundledOutput(redstone_side, redstone_colors.piston + redstone_colors.activator)
+        portal_charging = true
         sleep(1)
         redstone.setBundledOutput(redstone_side, redstone_colors.piston)
-        portal_active = true
-        portal_charging = true
         sleep(6)
+        portal_active = true
         portal_charging = false
     end
     turtle.drop()
