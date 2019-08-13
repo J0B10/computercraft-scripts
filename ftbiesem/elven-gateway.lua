@@ -33,12 +33,14 @@ local function transform()
     end
     turtle.select(slot)
     if not portal_active then 
+        redstone.setBundledOutput(redstone_side, redstone_colors.piston)
+        sleep(0.1)
         redstone.setBundledOutput(redstone_side, redstone_colors.piston + redstone_colors.activator)
-        sleep(0.5)
+        sleep(1)
         redstone.setBundledOutput(redstone_side, redstone_colors.piston)
         portal_active = true
         portal_charging = true
-        sleep(7)
+        sleep(6)
         portal_charging = false
     end
     turtle.drop()
@@ -56,6 +58,7 @@ local function idle()
     redstone.setBundledOutput(redstone_side, redstone_colors.piston)
 end
 
+redstone.setBundledOutput(redstone_side, redstone_colors.piston)
 while true do
     parallel.waitForAny(transform, idle)
 end
