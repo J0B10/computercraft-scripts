@@ -98,6 +98,12 @@ local function button()
 end
 
 --main
+
+window_state.setVisible(true)
+window_heat.setVisible(true)
+
+term.clear()
+
 while true do
     parallel.waitForAny(control,button)
 end
