@@ -36,7 +36,7 @@ local function paint_state()
         window_state.setBackgroundColor(colors.lightGray)
     end
     window_state.clear()
-    window_state.setCursorPos(2,3)
+    window_state.setCursorPos(5,2)
     if active then
         window_state.write("Running")
     else
@@ -54,7 +54,7 @@ local function paint_heat()
         window_heat.setBackgroundColor(colors.red)
     end
     window_heat.clear()
-    window_heat.setCursorPos(2,3)
+    window_heat.setCursorPos(5,2)
     window_heat.write("Heat: " .. math.floor(heat * 100) .. "%")
 end
 
@@ -103,6 +103,10 @@ window_state.setVisible(true)
 window_heat.setVisible(true)
 
 term.clear()
+term.setBackgroundColor(colors.yellow)
+term.setTextColor(colors.black)
+term.setCursorPos(1,1)
+term.write(os.getComputerLabel())
 
 while true do
     parallel.waitForAny(control,button)
