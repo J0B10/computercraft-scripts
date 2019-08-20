@@ -2,11 +2,30 @@ local reactor = peripheral.wrap("top")
 
 local max_heat = 0.6
 
+
+--load the last setting for the reactor
+local function loadState()
+    if fs.exists(".reactor-state.cfg") then
+        return fs.open(".reactor-state.cfg", "r").readAll() == "true"
+    else
+        return false
+    end
+end
+
 local active = loadState()
 
 local term_x,term_y = term.current().getSize()
 local window_state = window.create(term.current(), (term_x - 30) / 3, (term_y - 3) / 2, 15, 3)
 local window_heat = window.create(term.current(), (term_x - 30) / 3 * 2 + 15, (term_y - 3) / 2, 15, 3)
+
+--get the current reactor heat in percent
+local function getHeat()
+    if r.getHeat() == 0 then 
+        return 0
+    else
+        return r.getMaxHeat() / r.getHeat()
+    end
+end
 
 --print the state button on term
 local function paint_state()
@@ -37,25 +56,6 @@ local function paint_heat()
     window_heat.clear()
     window_heat.setCursorPos(2,3)
     window_heat.write("Heat: " .. math.floor(heat * 100) .. "%")
-end
-
-
---load the last setting for the reactor
-local function loadState()
-    if fs.exists(".reactor-state.cfg") then
-        return fs.open(".reactor-state.cfg", "r").readAll() == "true"
-    else
-        return false
-    end
-end
-
---get the current reactor heat in percent
-local function getHeat()
-    if r.getHeat() == 0 then 
-        return 0
-    else
-        return r.getMaxHeat() / r.getHeat()
-    end
 end
 
 --main function for reactor control
