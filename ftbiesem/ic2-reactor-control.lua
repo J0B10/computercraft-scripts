@@ -20,10 +20,10 @@ local window_heat = window.create(term.current(), (term_x - 30) / 3 * 2 + 15, (t
 
 --get the current reactor heat in percent
 local function getHeat()
-    if r.getHeat() == 0 then 
+    if reactor.getHeat() == 0 then 
         return 0
     else
-        return r.getMaxHeat() / r.getHeat()
+        return reactor.getMaxHeat() / reactor.getHeat()
     end
 end
 
