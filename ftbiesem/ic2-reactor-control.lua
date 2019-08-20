@@ -106,6 +106,7 @@ term.clear()
 term.setBackgroundColor(colors.yellow)
 term.setTextColor(colors.black)
 term.setCursorPos(1,1)
+term.clearLine()
 term.write(os.getComputerLabel())
 
 while true do
