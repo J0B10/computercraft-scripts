@@ -12,6 +12,7 @@ end
 
 local active = loadState()
 
+local term_x,term_y = term.current().getSize()
 local button = window.create(term.current(), (term_x - 15) / 2, (term_y - 3) / 2, 15, 3)
 
 --print the state button on term
