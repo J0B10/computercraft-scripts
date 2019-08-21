@@ -17,18 +17,18 @@ local button = window.create(term.current(), (term_x - 15) / 2, (term_y - 3) / 2
 
 --print the state button on term
 local function paint_button()
-    window_state.setTextColor(colors.black)
+    button.setTextColor(colors.black)
     if active then
-        window_state.setBackgroundColor(colors.lime)
+        button.setBackgroundColor(colors.lime)
     else 
-        window_state.setBackgroundColor(colors.lightGray)
+        button.setBackgroundColor(colors.lightGray)
     end
-    window_state.clear()
-    window_state.setCursorPos(5,2)
+    button.clear()
+    button.setCursorPos(5,2)
     if active then
-        window_state.write("Shield On")
+        button.write("Shield On")
     else
-        window_state.write("Shield Off")
+        button.write("Shield Off")
     end
 end
 
