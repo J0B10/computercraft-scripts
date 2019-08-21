@@ -62,15 +62,13 @@ end
 local function control()
     while true do
         if active then 
-            redstone.setOutput("right", false)
             if battery.getEnergyStored() < battery.getMaxEnergyStored() - 1000 then
-                redstone.setOutput("left", false)
+                redstone.setBundledOutput("left", 0)
             else
-                redstone.setOutput("left", true)
+                redstone.setBundledOutput("left", 0 + colors.red)
             end
         else
-            redstone.setOutput("left", false)
-            redstone.setOutput("right", true)
+            redstone.setBundledOutput("left", colors.blue)
         end
         sleep(0.5)
     end
