@@ -12,7 +12,7 @@ end
 while true do
     local cpus = me.getCraftingCPUs()
     local free = 0
-    for i=0, #cpus do
+    for i=1, #cpus do
         if not cpus[i].busy then
             free = free + 1
         end
