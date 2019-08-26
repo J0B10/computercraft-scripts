@@ -9,7 +9,7 @@ local function areNearby()
         item_data = s.getEntityData(items[i], "ITEM").all()
         if math.abs(item_data.position.x) < range and 
                 math.abs(item_data.position.y) < range and 
-                math.abs(item_data.position.z) < range) then
+                math.abs(item_data.position.z) < range then
             if item_data.item.stack.id == "Botania:manaResource" and 
                     item_data.item.stack.dmg <= 2 then
                 return true
