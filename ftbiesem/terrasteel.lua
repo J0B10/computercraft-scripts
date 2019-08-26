@@ -6,7 +6,7 @@ local function areNearby()
     local items = sensor.getEntityIds("ITEM")
     local item_data
     for i=1, #items do
-        item_data = s.getEntityData(items[i], "ITEM").all()
+        item_data = sensor.getEntityData(items[i], "ITEM").all()
         if math.abs(item_data.position.x) < range and 
                 math.abs(item_data.position.y) < range and 
                 math.abs(item_data.position.z) < range then
