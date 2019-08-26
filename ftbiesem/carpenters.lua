@@ -20,6 +20,7 @@ while true do
     local craftable = getCraftable()
     local i = 1
     while i <= craftable and i<=free do
+        i = i + 1
         me.requestCrafting({id="Forestry:chipsets", dmg=3}, 1)
     end
     sleep(0.5)
