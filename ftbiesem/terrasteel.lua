@@ -18,41 +18,41 @@ local function areNearby()
     return false
 end
 
---check if alle ingridients are in the turtles inventory, 
---also returns a table with the slots of the ingridients
-local function hasIngridients()
-    local ingridients = {}
+--check if alle ingredients are in the turtles inventory, 
+--also returns a table with the slots of the ingredients
+local function hasingredients()
+    local ingredients = {}
     local item
     for i=1, 16 do
         item = turtle.getItemDetail(i)
         if item ~= nil then
             if item.name == "Botania:manaResource" then
                 if item.damage == 0 then
-                    ingridients["manasteel"] = i
+                    ingredients["manasteel"] = i
                 elseif item.damage == 1 then
-                    ingridients["manapearl"] = i
+                    ingredients["manapearl"] = i
                 elseif item.damage == 2 then
-                    ingridients["manadiamond"] = i
+                    ingredients["manadiamond"] = i
                 end
             end
         end
     end
-    if ingridients["manasteel"] == nil or 
-            ingridients["manadiamond"] == nil or 
-            ingridients["manapearl"] == nil then
-        return false, ingridients
+    if ingredients["manasteel"] == nil or 
+            ingredients["manadiamond"] == nil or 
+            ingredients["manapearl"] == nil then
+        return false, ingredients
     else
-        return true, ingridients
+        return true, ingredients
     end
 end
 
 --main
 while true do
     --wait till required ingredients are provided
-    local found, ingridients = hasIngridients()
+    local found, ingredients = hasingredients()
     while not found do
         os.pullEvent("turtle_inventory")
-        found, ingridients = hasIngridients()
+        found, ingredients = hasingredients()
     end
     --wait till mana plate is free
     local nearby = areNearby()
@@ -61,11 +61,11 @@ while true do
         nearby = areNearby()
     end
     --drop items
-    turtle.select(ingridients.manasteel)
+    turtle.select(ingredients.manasteel)
     turtle.drop(1)
-    turtle.select(ingridients.manapearl)
+    turtle.select(ingredients.manapearl)
     turtle.drop(1)
-    turtle.select(ingridients.manadiamond)
+    turtle.select(ingredients.manadiamond)
     turtle.drop(1)
     turtle.select(1)
     --wait a second
