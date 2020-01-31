@@ -10,7 +10,7 @@ local draconium = -1
 local function findItems()
     for i=1, 16 do
         local item = turtle.getItemDetail(i)
-        if item!=nil then
+        if item ~= nil then
             if item.name == "minecraft:tnt" then
                 tnt = i
             else if item.name == "DraconicEvolution:draconicCore"  && item.count >= 16 then
@@ -22,7 +22,7 @@ local function findItems()
             end
         end
     end
-    return tnt != -1 && dragonHeart != -1 && draconicCore != -1 && draconium != -1
+    return tnt ~= -1 && dragonHeart ~= -1 && draconicCore ~= -1 && draconium ~= -1
 end
 
 --perform the ritual
