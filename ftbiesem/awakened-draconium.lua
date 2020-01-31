@@ -13,11 +13,11 @@ local function findItems()
         if item ~= nil then
             if item.name == "minecraft:tnt" then
                 tnt = i
-            else if item.name == "DraconicEvolution:draconicCore"  and item.count >= 16 then
+            elseif item.name == "DraconicEvolution:draconicCore"  and item.count >= 16 then
                 draconicCore = i
-            else if item.name == "DraconicEvolution:draconium" and item.damage == 2 and item.count >= 4 then
+            elseif item.name == "DraconicEvolution:draconium" and item.damage == 2 and item.count >= 4 then
                 draconium = i
-            else if item.name == "DraconicEvolution:dragonHeart" then
+            elseif item.name == "DraconicEvolution:dragonHeart" then
                 dragonHeart = i
             end
         end
