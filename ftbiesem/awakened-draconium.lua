@@ -43,5 +43,7 @@ end
 while true do
     if findItems() then
         ritual()
+    else
+        sleep(0.2)
     end
 end
