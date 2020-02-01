@@ -33,15 +33,16 @@ end
 local function ritual()
     turtle.select(tnt)
     turtle.drop(1)
+    sleep(3.7)
     turtle.select(dragonHeart)
     turtle.drop(1)
-    sleep(15)
+    sleep(8)
     turtle.select(draconicCore)
     turtle.drop(16)
-    sleep(5)
+    sleep(3)
     turtle.select(draconium)
     turtle.drop(4)
-    sleep(40)
+    sleep(21)
 end
 
 while true do
