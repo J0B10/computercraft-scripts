@@ -1,4 +1,5 @@
 --example recipe
+--[[
 local recipe = {
     {
         name = "minecraft:stone",
@@ -12,6 +13,7 @@ local recipe = {
         onDrop = function() print("Dropped dirt") end
     }
 }
+]]--
 
 --craft the given recipes by using the items in the turtles inventory
 function craft(...)
