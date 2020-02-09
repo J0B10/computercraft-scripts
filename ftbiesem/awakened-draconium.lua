@@ -8,6 +8,10 @@ local draconium = -1
 
 --search for the required items in the turtles inventory
 local function findItems()
+    tnt = -1
+    dragonHeart = -1 
+    draconicCore = -1
+    draconium = -1
     for i=1, 16 do
         local item = turtle.getItemDetail(i)
         if item ~= nil then
@@ -29,15 +33,16 @@ end
 local function ritual()
     turtle.select(tnt)
     turtle.drop(1)
+    sleep(3.7)
     turtle.select(dragonHeart)
     turtle.drop(1)
-    sleep(5)
+    sleep(8)
     turtle.select(draconicCore)
     turtle.drop(16)
-    sleep(1)
+    sleep(3)
     turtle.select(draconium)
     turtle.drop(4)
-    sleep(5)
+    sleep(21)
 end
 
 while true do
