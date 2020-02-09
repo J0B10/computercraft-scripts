@@ -1,7 +1,8 @@
 local function waitForMana()
-    repeat
+    sleep(3)
+    while not redstone.getInput("left") do
         sleep(1)
-    until redstone.getInput("left")
+    end 
 end
 
 rune_Fire = {
@@ -32,7 +33,7 @@ rune_Fire = {
         name = "Botania:livingrock",
         damage = 0,
         amount = 1,
-        delay = 1
+        delay = 3
     }
 }
 
@@ -66,7 +67,7 @@ rune_Water = {
         name = "Botania:livingrock",
         damage = 0,
         amount = 1,
-        delay = 1
+        delay = 3
     }
 }
 
@@ -98,7 +99,7 @@ rune_Earth = {
         name = "Botania:livingrock",
         damage = 0,
         amount = 1,
-        delay = 1
+        delay = 3
     }
 }
 
@@ -131,7 +132,7 @@ rune_Air = {
         name = "Botania:livingrock",
         damage = 0,
         amount = 1,
-        delay = 1
+        delay = 3
     }
 }
 
