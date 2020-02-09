@@ -15,24 +15,6 @@ local recipe = {
 }
 ]]--
 
---craft the given recipes by using the items in the turtles inventory
-function craft(loop, ...)
-    while true do
-        assert(arg, "no recipes provided")
-        for i, recipe in ipairs(arg) do
-            if contains(recipe) then
-                performCraft(recipe)
-                break
-            end 
-        end
-        if loop then 
-            sleep (0.2)
-        else
-            return
-        end
-    end
-end
-
 --check if the inventory contains all ingredients of a recipe
 function contains(recipe)
     assert(recipe, "recipe is nil")
@@ -91,3 +73,20 @@ local function performCraft(recipe)
     end
 end
 
+--craft the given recipes by using the items in the turtles inventory
+function craft(loop, ...)
+    while true do
+        assert(arg, "no recipes provided")
+        for i, recipe in ipairs(arg) do
+            if contains(recipe) then
+                performCraft(recipe)
+                break
+            end 
+        end
+        if loop then 
+            sleep (0.2)
+        else
+            return
+        end
+    end
+end
