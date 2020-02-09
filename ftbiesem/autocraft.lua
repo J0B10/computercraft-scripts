@@ -16,21 +16,20 @@ local recipe = {
 ]]--
 
 --craft the given recipes by using the items in the turtles inventory
-function craft(...)
-    assert(arg, "no recipes provided")
-    for i, recipe in ipairs(arg) do
-        if contains(recipe) then
-            performCraft(recipe)
-            break
-        end 
-    end
-end
-
---let the turtle autocraft the given recipes
-function activateAutocrafting(...)
+function craft(loop, ...)
     while true do
-        craft(arg)
-        sleep(0.2)
+        assert(arg, "no recipes provided")
+        for i, recipe in ipairs(arg) do
+            if contains(recipe) then
+                performCraft(recipe)
+                break
+            end 
+        end
+        if loop then 
+            sleep (0.2)
+        else
+            return
+        end
     end
 end
 
