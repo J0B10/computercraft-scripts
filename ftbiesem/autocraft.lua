@@ -38,7 +38,7 @@ end
 function contains(recipe)
     assert(recipe, "recipe is nil")
     for i, ingredient in ipairs(recipe) do
-        assert(ingredient.name, "invalid ingredient 'unknown': name is missing")
+        assert(ingredient.name, "invalid ingredient 'unknown "..i.."': name is missing")
         assert(ingredient.amount, "invalid ingredient '"..ingredient.name.."': amount is missing")
         local found = 0
         for slot=1,16 do
