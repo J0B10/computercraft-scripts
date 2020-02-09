@@ -45,7 +45,7 @@ function contains(recipe)
             local item = turtle.getItemDetail(slot)
             if item ~= nil and item.name == ingredient.name then
                 if ingredient.damage == nil or ingredient.damage == item.damage then
-                    found = found + item.amount
+                    found = found + item.count
                     if found >= ingredient.amount then
                         break
                     end
@@ -71,13 +71,13 @@ local function performCraft(recipe)
             if item ~= nil and item.name == ingredient.name then
                 if ingredient.damage == nil or ingredient.damage == item.damage then
                         turtle.select(slot)
-                    if (dropped + item.amount) >= ingredient.amount then
+                    if (dropped + item.count) >= ingredient.amount then
                         turtle.drop(ingredient.amount - dropped)
                         dropped = ingredient.amount
                         break
                     else 
-                        turtle.drop(item.amount)
-                        dropped = dropped + item.amount
+                        turtle.drop(item.count)
+                        dropped = dropped + item.count
                     end
                 end
             end
