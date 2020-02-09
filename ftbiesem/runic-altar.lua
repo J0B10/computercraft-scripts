@@ -20,7 +20,7 @@ local rune_Fire = {
     {
         name = "minecraft:nether_wart",
         amount = 1,
-        delay = 20
+        delay = 50
     },
     {
         name = "Botania:livingrock",
@@ -54,7 +54,7 @@ local rune_Water = {
         name = "minecraft:fishing_rod",
         damage = 0,
         amount = 1,
-        delay = 20
+        delay = 50
     },
     {
         name = "Botania:livingrock",
@@ -86,7 +86,7 @@ local rune_Earth = {
     {
         name = "minecraft:red_mushroom",
         amount = 1,
-        delay = 20
+        delay = 50
     },
     {
         name = "Botania:livingrock",
@@ -118,7 +118,14 @@ local rune_Air = {
     },
     {
         name = "minecraft:string",
-        amount = 1
+        amount = 1,
+        delay = 50
+    },
+    {
+        name = "Botania:livingrock",
+        damage = 0,
+        amount = 1,
+        delay = 1
     }
 }
 
