@@ -1,4 +1,10 @@
-local rune_Fire = {
+local function waitForMana()
+    repeat
+        sleep(1)
+    until redstone.getInput("left")
+end
+
+rune_Fire = {
     {
         name = "Thaumcraft:ItemShard",
         damage = 1,
@@ -20,7 +26,7 @@ local rune_Fire = {
     {
         name = "minecraft:nether_wart",
         amount = 1,
-        delay = 50
+        onDrop = waitForMana
     },
     {
         name = "Botania:livingrock",
@@ -30,7 +36,7 @@ local rune_Fire = {
     }
 }
 
-local rune_Water = {
+rune_Water = {
     {
         name = "Thaumcraft:ItemShard",
         damage = 2,
@@ -54,7 +60,7 @@ local rune_Water = {
         name = "minecraft:fishing_rod",
         damage = 0,
         amount = 1,
-        delay = 50
+        onDrop = waitForMana
     },
     {
         name = "Botania:livingrock",
@@ -64,7 +70,7 @@ local rune_Water = {
     }
 }
 
-local rune_Earth = {
+rune_Earth = {
     {
         name = "Thaumcraft:ItemShard",
         damage = 3,
@@ -86,7 +92,7 @@ local rune_Earth = {
     {
         name = "minecraft:red_mushroom",
         amount = 1,
-        delay = 50
+        onDrop = waitForMana
     },
     {
         name = "Botania:livingrock",
@@ -97,7 +103,7 @@ local rune_Earth = {
 }
 
 
-local rune_Air = {
+rune_Air = {
     {
         name = "Thaumcraft:ItemShard",
         damage = 0,
@@ -119,7 +125,7 @@ local rune_Air = {
     {
         name = "minecraft:string",
         amount = 1,
-        delay = 50
+        onDrop = waitForMana
     },
     {
         name = "Botania:livingrock",
