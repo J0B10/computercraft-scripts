@@ -15,4 +15,6 @@ https://raw.githubusercontent.com/joblo2213/computercraft-scripts/master/
 ```
 and use the relative path to the file you want to download.
 
+You'll find a long guide for using GitDownload in [`GitDownload.md`](GitDownload.md)
+
 Have fun!
